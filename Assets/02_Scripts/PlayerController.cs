@@ -27,11 +27,15 @@ public class PlayerController : MonoBehaviour
         // 축(Axis) 값을 받아옴. -1.0f ~ 0.0 ~ +1.0f
         v = Input.GetAxis("Vertical");
         h = Input.GetAxis("Horizontal");
-        // Debug.Log($"h={h} , v={v}");
+        r = Input.GetAxis("Mouse X");
 
         // Vector 덧셈 연산
+        // 이동 처리 로직
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
         transform.Translate(moveDir.normalized * Time.deltaTime * moveSpeed);
+
+        // 회전 처리 로직
+        transform.Rotate(Vector3.up * Time.deltaTime * r * turnSpeed);
 
         /*
             60 FPS => 0.01666 0.01666*60
