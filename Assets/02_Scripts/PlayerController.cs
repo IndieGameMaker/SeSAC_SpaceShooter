@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Animator animator;
 
+    // Animator Hash 추출
+    private readonly int hashForward = Animator.StringToHash("forward");
+    private readonly int hashStrafe = Animator.StringToHash("strafe");
+
     void Start()
     {
         animator = GetComponent<Animator>();
