@@ -22,11 +22,12 @@ public class PlayerController : MonoBehaviour
 
         // Vector 덧셈 연산
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
-        Debug.Log("비정규화" + moveDir.magnitude);
-        Debug.Log("정규화" + moveDir.normalized.magnitude);
+        // Debug.Log("비정규화" + moveDir.magnitude);
+        // Debug.Log("정규화" + moveDir.normalized.magnitude);
+        transform.Translate(moveDir * 0.1f);
 
-        transform.Translate(Vector3.forward * v * 0.1f);
-        transform.Translate(Vector3.right * h * 0.1f);
+        //transform.Translate(Vector3.forward * v * 0.1f);
+        //transform.Translate(Vector3.right * h * 0.1f);
     }
 
 }
