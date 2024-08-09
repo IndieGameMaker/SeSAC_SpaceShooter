@@ -6,8 +6,12 @@ public class PlayerController : MonoBehaviour
     // 전역변수 선언
     private float v;
     private float h;
+    private float r;
 
-    public float moveSpeed = 8.0f;
+    [SerializeField]
+    private float moveSpeed = 3.0f;
+    [SerializeField]
+    private float turnSpeed = 200.0f;
 
     // 1 호출, 제일 먼저 호출 
     void Start()
