@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        animator = this.gameObject.GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     // 매 프레임 마다 호출, 60 FPS, 불규칙한 주기, 랜더링 주기와 동일
