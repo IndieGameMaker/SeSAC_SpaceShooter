@@ -1,3 +1,4 @@
+using System;
 using UnityEditor.PackageManager;
 using UnityEngine;
 
@@ -14,12 +15,13 @@ public class PlayerController : MonoBehaviour
     private float turnSpeed = 200.0f;
 
     // Animator 컴포넌트를 저장할 변수 선언
+    //[NonSerialized]
+    [HideInInspector]
     public Animator animator;
-
 
     void Start()
     {
-        Application.targetFrameRate = 60;
+        animator = this.gameObject.GetComponent<Animator>();
     }
 
     // 매 프레임 마다 호출, 60 FPS, 불규칙한 주기, 랜더링 주기와 동일
