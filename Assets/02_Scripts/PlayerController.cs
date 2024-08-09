@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // transform.position += new Vector3(0, 0, 0.1f);
-        transform.position += Vector3.forward * 0.1f;
+        // transform.position += Vector3.forward * 0.1f;
+        transform.Translate(Vector3.forward * 0.1f);
     }
 
 }
