@@ -39,8 +39,8 @@ public class PlayerController : MonoBehaviour
     private void Animation()
     {
         // 애니메이션 파라메터 전달
-        animator.SetFloat("forward", v);
-        animator.SetFloat("strafe", h);
+        animator.SetFloat(hashForward, v);
+        animator.SetFloat(hashStrafe, h);
     }
 
     private void Locomotion()
