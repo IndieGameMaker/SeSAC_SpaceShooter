@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     // 전역변수 선언
     private float v;
-
+    private float h;
 
     // 1 호출, 제일 먼저 호출 
     void Start()
@@ -17,8 +17,8 @@ public class PlayerController : MonoBehaviour
     {
         // 축(Axis) 값을 받아옴. -1.0f ~ 0.0 ~ +1.0f
         v = Input.GetAxis("Vertical");
-        // 콘솔 뷰에 메시지를 출력하는 메소드 Debug.Log("메시지");
-        Debug.Log(v);
+        h = Input.GetAxis("Horizontal");
+        Debug.Log($"h={h} , v={v}");
 
 
         // transform.position += new Vector3(0, 0, 0.1f);
