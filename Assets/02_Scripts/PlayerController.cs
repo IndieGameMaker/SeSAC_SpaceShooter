@@ -20,10 +20,10 @@ public class PlayerController : MonoBehaviour
         h = Input.GetAxis("Horizontal");
         Debug.Log($"h={h} , v={v}");
 
-
         // transform.position += new Vector3(0, 0, 0.1f);
         // transform.position += Vector3.forward * 0.1f;
         transform.Translate(Vector3.forward * v * 0.1f);
+        transform.Translate(Vector3.right * h * 0.1f);
     }
 
 }
