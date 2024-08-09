@@ -13,7 +13,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float turnSpeed = 200.0f;
 
-    // 1 호출, 제일 먼저 호출 
+    // Animator 컴포넌트를 저장할 변수 선언
+    public Animator animator;
+
+
     void Start()
     {
         Application.targetFrameRate = 60;
@@ -36,6 +39,9 @@ public class PlayerController : MonoBehaviour
 
         // 회전 처리 로직
         transform.Rotate(Vector3.up * Time.deltaTime * r * turnSpeed);
+
+        // 애니메이션 파라메터 전달
+        animator.SetFloat("forward", v);
 
         /*
             60 FPS => 0.01666 0.01666*60
