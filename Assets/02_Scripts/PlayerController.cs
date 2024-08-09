@@ -37,6 +37,16 @@ public class PlayerController : MonoBehaviour
         InputAxis();
         Locomotion();
         Animation();
+        Fire();
+    }
+
+    private void Fire()
+    {
+        // 총알 프리팹을 이용해서 런타임에서 동적을 생성
+        if (Input.GetMouseButtonDown(0))
+        {
+
+        }
     }
 
     private void Animation()
