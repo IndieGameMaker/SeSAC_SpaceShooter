@@ -169,6 +169,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   turnSpeed: 200
+  firePos: {fileID: 983194866}
+  bulletPrefab: {fileID: 4438272317508934847, guid: aaa7c9b7cfa42498f93fb6442089d868, type: 3}
   animator: {fileID: 0}
 --- !u!1001 &227544905
 PrefabInstance:
