@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float turnSpeed = 200.0f;
 
+    [SerializeField] private Transform firePos;
+    [SerializeField] private GameObject bulletPrefab;
+
     // Animator 컴포넌트를 저장할 변수 선언
     //[NonSerialized]
     [HideInInspector]
