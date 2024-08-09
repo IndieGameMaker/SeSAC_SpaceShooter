@@ -27,13 +27,20 @@ public class PlayerController : MonoBehaviour
     // 매 프레임 마다 호출, 60 FPS, 불규칙한 주기, 랜더링 주기와 동일
     void Update()
     {
-        Debug.Log(Time.deltaTime);
+        InputAxis();
+        Locomotion();
+        Animation();
+    }
 
-        // 축(Axis) 값을 받아옴. -1.0f ~ 0.0 ~ +1.0f
-        v = Input.GetAxis("Vertical");
-        h = Input.GetAxis("Horizontal");
-        r = Input.GetAxis("Mouse X");
+    private void Animation()
+    {
+        // 애니메이션 파라메터 전달
+        animator.SetFloat("forward", v);
+        animator.SetFloat("strafe", h);
+    }
 
+    private void Locomotion()
+    {
         // Vector 덧셈 연산
         // 이동 처리 로직
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
@@ -41,21 +48,15 @@ public class PlayerController : MonoBehaviour
 
         // 회전 처리 로직
         transform.Rotate(Vector3.up * Time.deltaTime * r * turnSpeed);
-
-        // 애니메이션 파라메터 전달
-        animator.SetFloat("forward", v);
-
-        /*
-            60 FPS => 0.01666 0.01666*60
-            30 FPS => 0.03333 0.03333*30
-        
-        */
-
-
-        //transform.Translate(Vector3.forward * v * 0.1f);
-        //transform.Translate(Vector3.right * h * 0.1f);
     }
 
+    private void InputAxis()
+    {
+        // 축(Axis) 값을 받아옴. -1.0f ~ 0.0 ~ +1.0f
+        v = Input.GetAxis("Vertical");
+        h = Input.GetAxis("Horizontal");
+        r = Input.GetAxis("Mouse X");
+    }
 }
 
 /*
