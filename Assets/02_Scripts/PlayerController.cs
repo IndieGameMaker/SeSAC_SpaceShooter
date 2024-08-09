@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     // 1 호출, 제일 먼저 호출 
     void Start()
     {
+        Application.targetFrameRate = 60;
     }
 
     // 매 프레임 마다 호출, 60 FPS, 불규칙한 주기, 랜더링 주기와 동일
@@ -22,9 +23,7 @@ public class PlayerController : MonoBehaviour
 
         // Vector 덧셈 연산
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
-        // Debug.Log("비정규화" + moveDir.magnitude);
-        // Debug.Log("정규화" + moveDir.normalized.magnitude);
-        transform.Translate(moveDir * 0.1f);
+        transform.Translate(moveDir.normalized * 0.1f);
 
         //transform.Translate(Vector3.forward * v * 0.1f);
         //transform.Translate(Vector3.right * h * 0.1f);
