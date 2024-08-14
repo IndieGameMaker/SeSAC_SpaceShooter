@@ -2,6 +2,15 @@ using UnityEngine;
 
 public class RemoveBullet : MonoBehaviour
 {
+    void OnCollisionEnter(Collision coll)
+    {
+        // 충동한 물체를 파악
+        if (coll.collider.tag == "BULLET")
+        {
+            Destroy(coll.gameObject);
+        }
+    }
+
     // 충돌 콜백 함수
     /*
         1. 양쪽 다 Collider 갖고 있다.
@@ -16,7 +25,5 @@ public class RemoveBullet : MonoBehaviour
             OnTriggerEnter
             OnTriggerStay
             OnTriggerExit
-    
-
     */
 }
