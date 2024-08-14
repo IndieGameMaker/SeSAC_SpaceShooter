@@ -1,9 +1,11 @@
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Barrel : MonoBehaviour
 {
     private int hitCount = 0;
+    public GameObject expEffect;
 
     void OnCollisionEnter(Collision coll)
     {
@@ -36,5 +38,7 @@ public class Barrel : MonoBehaviour
         Vector3 pos = Random.insideUnitSphere; //단위 구체의 랜덤값 리턴
         rb.AddExplosionForce(1500.0f, transform.position + pos, 10.0f, 1800.0f);
         Destroy(this.gameObject, 3.0f);
+
+        Instantiate(expEffect, transform.position, Quaternion.identity);
     }
 }
