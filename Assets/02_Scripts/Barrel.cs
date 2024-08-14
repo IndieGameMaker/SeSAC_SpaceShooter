@@ -7,6 +7,8 @@ public class Barrel : MonoBehaviour
     private int hitCount = 0;
     public GameObject expEffect;
 
+    [SerializeField] private Texture[] textures;
+
     void OnCollisionEnter(Collision coll)
     {
         if (coll.gameObject.CompareTag("BULLET"))
