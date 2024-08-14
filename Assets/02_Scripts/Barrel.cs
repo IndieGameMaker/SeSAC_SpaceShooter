@@ -39,6 +39,7 @@ public class Barrel : MonoBehaviour
         rb.AddExplosionForce(1500.0f, transform.position + pos, 10.0f, 1800.0f);
         Destroy(this.gameObject, 3.0f);
 
-        Instantiate(expEffect, transform.position, Quaternion.identity);
+        var obj = Instantiate(expEffect, transform.position, Quaternion.identity);
+        Destroy(obj, 5.0f);
     }
 }
