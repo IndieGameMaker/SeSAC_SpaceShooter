@@ -9,6 +9,18 @@ public class Barrel : MonoBehaviour
 
     [SerializeField] private Texture[] textures;
 
+    private new MeshRenderer renderer;
+
+    void Start()
+    {
+        // 차일드에 있는 MeshRenderer 컴포넌트를 추출
+        renderer = GetComponentInChildren<MeshRenderer>();
+        // 텍스처를 선택하기 위한 난수 발생
+        int index = Random.Range(0, textures.Length); //Random.Range(0, 3) => 0, 1, 2
+        // 텍스처 교체
+        renderer.material.mainTexture = textures[index];
+    }
+
     void OnCollisionEnter(Collision coll)
     {
         if (coll.gameObject.CompareTag("BULLET"))
