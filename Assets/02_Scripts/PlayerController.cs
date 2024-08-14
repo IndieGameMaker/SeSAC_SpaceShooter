@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Transform firePos;
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private AudioClip fireSfx;
 
     // Animator 컴포넌트를 저장할 변수 선언
     //[NonSerialized]
