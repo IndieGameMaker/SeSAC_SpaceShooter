@@ -33,7 +33,7 @@ public class Barrel : MonoBehaviour
     {
         var rb = this.gameObject.AddComponent<Rigidbody>();
 
-
-        rb.AddExplosionForce(1500.0f, transform.position, 10.0f, 1800.0f);
+        Vector3 pos = Random.insideUnitSphere; //단위 구체의 랜덤값 리턴
+        rb.AddExplosionForce(1500.0f, transform.position + pos, 10.0f, 1800.0f);
     }
 }
