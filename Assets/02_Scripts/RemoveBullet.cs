@@ -2,11 +2,26 @@ using UnityEngine;
 
 public class RemoveBullet : MonoBehaviour
 {
+    public GameObject sparkEffect;
+
     void OnCollisionEnter(Collision coll)
     {
         // 충동한 물체를 파악
         if (coll.collider.CompareTag("BULLET"))
         {
+            // 충돌 정보
+            ContactPoint cp = coll.GetContact(0);
+            // 충돌 좌표
+            Vector3 _point = cp.point;
+            // 법선 벡터
+            Vector3 _normal = cp.normal;
+
+            // 법선 벡터가 가리키는 방향의 각도(쿼터니언)를 계산
+            Quaternion rot = Quaternion.LookRotation(_normal);
+
+            // 스파크 이펙트 생성
+            Instantiate(sparkEffect, _point, rot);
+
             Destroy(coll.gameObject);
         }
 
