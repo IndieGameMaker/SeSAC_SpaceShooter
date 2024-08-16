@@ -19,6 +19,8 @@ public class MonsterController : MonoBehaviour
     private Transform playerTr;
     private Transform monsterTr;
     private NavMeshAgent agent;
+    private Animator animator;
+    private readonly int hashIsTrace = Animator.StringToHash("IsTrace");
 
     public bool isDie = false;
 
@@ -31,6 +33,7 @@ public class MonsterController : MonoBehaviour
 
         monsterTr = transform; //monsterTr = GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
 
         StartCoroutine(CheckMonsterState());
         StartCoroutine(MonsterAction());
