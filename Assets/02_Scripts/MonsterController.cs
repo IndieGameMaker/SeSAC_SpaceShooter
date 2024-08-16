@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MonsterController : MonoBehaviour
 {
@@ -17,15 +18,19 @@ public class MonsterController : MonoBehaviour
 
     private Transform playerTr;
     private Transform monsterTr;
+    private NavMeshAgent agent;
 
     public bool isDie = false;
 
     void Start()
     {
-        GameObject playerObj = GameObject.Find("Player");
-        playerTr = playerObj.GetComponent<Transform>();
+        //GameObject playerObj = GameObject.Find("Player");
+
+        GameObject playerObj = GameObject.FindGameObjectWithTag("PLAYER");
+        playerTr = playerObj?.GetComponent<Transform>();
 
         monsterTr = transform; //monsterTr = GetComponent<Transform>();
+        agent = GetComponent<NavMeshAgent>();
 
         StartCoroutine(CheckMonsterState());
         StartCoroutine(MonsterAction());
@@ -63,12 +68,13 @@ public class MonsterController : MonoBehaviour
             {
                 case State.IDLE:
                     // 아이들링일 경우 로직처리
-                    Debug.Log("정지");
+                    agent.isStopped = true;
                     break;
 
                 case State.TRACE:
                     // 추적 상태일 때 로직처리
-                    Debug.Log("추적");
+                    agent.SetDestination(playerTr.position);
+                    agent.isStopped = false; // 추적,이동 상태
                     break;
 
                 case State.ATTACK:
