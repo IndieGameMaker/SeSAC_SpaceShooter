@@ -14,9 +14,15 @@ public class MonsterController : MonoBehaviour
     // 공격 사정거리
     [SerializeField] private float attackDist = 2.0f;
 
+    private Transform playerTr;
+    private Transform monsterTr;
+
     void Start()
     {
+        GameObject playerObj = GameObject.Find("Player");
+        playerTr = playerObj.GetComponent<Transform>();
 
+        monsterTr = transform; //monsterTr = GetComponent<Transform>();
     }
 
     void Update()
