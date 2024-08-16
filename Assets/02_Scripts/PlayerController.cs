@@ -1,6 +1,7 @@
 #pragma warning disable CS0108
 
 using System;
+using System.Collections;
 using UnityEditor.PackageManager;
 using UnityEngine;
 
@@ -59,13 +60,21 @@ public class PlayerController : MonoBehaviour
             // 총소리 발생
             audio.PlayOneShot(fireSfx, 0.8f);
             // 총구 화염 효과
-            ShowMuzzleFlash();
+            StartCoroutine(ShowMuzzleFlash());
         }
     }
 
-    void ShowMuzzleFlash()
+    // 코루틴(Co-routine)
+    IEnumerator ShowMuzzleFlash()
     {
+        // MuzzleFlash 활성화
+        muzzleFlash.enabled = true;
 
+        // Waitting ...
+        yield return new WaitForSeconds(0.2f);
+
+        // MuzzleFlash 비활성화
+        muzzleFlash.enabled = false;
     }
 
     private void Animation()
