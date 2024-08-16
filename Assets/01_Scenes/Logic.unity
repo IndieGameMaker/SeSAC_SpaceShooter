@@ -172,6 +172,7 @@ MonoBehaviour:
   firePos: {fileID: 983194866}
   bulletPrefab: {fileID: 4438272317508934847, guid: aaa7c9b7cfa42498f93fb6442089d868, type: 3}
   fireSfx: {fileID: 8300000, guid: 641ff25f5da444ddf8874d961a56f0c9, type: 3}
+  muzzleFlash: {fileID: 0}
   animator: {fileID: 0}
 --- !u!82 &38373428
 AudioSource:
@@ -281,7 +282,6 @@ GameObject:
   - component: {fileID: 38931989}
   - component: {fileID: 38931992}
   - component: {fileID: 38931991}
-  - component: {fileID: 38931990}
   m_Layer: 0
   m_Name: MuzzleFlash
   m_TagString: Untagged
@@ -304,28 +304,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 983194866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &38931990
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 38931988}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &38931991
 MeshRenderer:
   m_ObjectHideFlags: 0
