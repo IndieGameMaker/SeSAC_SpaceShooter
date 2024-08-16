@@ -77,6 +77,9 @@ public class PlayerController : MonoBehaviour
         Vector2 offset = new Vector2(Random.Range(0, 2), Random.Range(0, 2)) * 0.5f;
         muzzleFlash.material.mainTextureOffset = offset;
 
+        // Scale 변경
+        muzzleFlash.transform.localScale = Vector3.one * Random.Range(1.0f, 3.0f);
+
         // Waitting ...
         yield return new WaitForSeconds(0.2f);
 
