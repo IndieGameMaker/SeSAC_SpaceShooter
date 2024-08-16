@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class MonsterController : MonoBehaviour
@@ -17,16 +18,39 @@ public class MonsterController : MonoBehaviour
     private Transform playerTr;
     private Transform monsterTr;
 
+    public bool isDie = false;
+
     void Start()
     {
         GameObject playerObj = GameObject.Find("Player");
         playerTr = playerObj.GetComponent<Transform>();
 
         monsterTr = transform; //monsterTr = GetComponent<Transform>();
+
+        StartCoroutine(CheckMonsterState());
     }
 
-    void Update()
+    IEnumerator CheckMonsterState()
     {
+        while (isDie == false)
+        {
+            //상태값을 측정
+            float distance = Vector3.Distance(monsterTr.position, playerTr.position);
 
+            if (distance <= attackDist)
+            {
+                state = State.ATTACK;
+            }
+            else if (distance <= traceDist)
+            {
+                state = State.TRACE;
+            }
+            else
+            {
+                state = State.IDLE;
+            }
+
+            yield return new WaitForSeconds(0.3f);
+        }
     }
 }
