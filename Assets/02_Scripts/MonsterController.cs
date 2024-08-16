@@ -28,6 +28,7 @@ public class MonsterController : MonoBehaviour
         monsterTr = transform; //monsterTr = GetComponent<Transform>();
 
         StartCoroutine(CheckMonsterState());
+        StartCoroutine(MonsterAction());
     }
 
     IEnumerator CheckMonsterState()
@@ -62,12 +63,18 @@ public class MonsterController : MonoBehaviour
             {
                 case State.IDLE:
                     // 아이들링일 경우 로직처리
+                    Debug.Log("정지");
                     break;
+
                 case State.TRACE:
                     // 추적 상태일 때 로직처리
+                    Debug.Log("추적");
                     break;
+
                 case State.ATTACK:
+                    Debug.Log("공격");
                     break;
+
                 case State.DIE:
                     break;
             }
