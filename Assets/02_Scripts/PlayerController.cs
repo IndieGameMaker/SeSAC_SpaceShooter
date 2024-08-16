@@ -80,6 +80,9 @@ public class PlayerController : MonoBehaviour
         // Scale 변경
         muzzleFlash.transform.localScale = Vector3.one * Random.Range(1.0f, 3.0f);
 
+        // Z축 회전
+        muzzleFlash.transform.localRotation = Quaternion.Euler(Vector3.forward * Random.Range(0, 360));
+
         // Waitting ...
         yield return new WaitForSeconds(0.2f);
 
@@ -121,4 +124,28 @@ public class PlayerController : MonoBehaviour
 
     Vector3.one     = Vector3(1, 1, 1)
     Vector3.zero    = Vector3(0, 0, 0)
+*/
+
+/*
+    Quaternion 쿼터니언 (사 원수) x, y, z, w
+    복소수 사차원 벡터
+
+    오일러 회전 (오일러각 Euler) 0 ~ 360
+    x -> y -> z
+
+    짐벌락(Gimbal Lock) 발생
+
+    Quaternion.Euler(30, 45, -15)
+    Quaternion.LookRotation(벡터)
+    Quaternion.identity
+
+
+
+
+
+
+
+
+
+
 */
