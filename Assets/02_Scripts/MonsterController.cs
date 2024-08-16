@@ -78,6 +78,8 @@ public class MonsterController : MonoBehaviour
                     // 추적 상태일 때 로직처리
                     agent.SetDestination(playerTr.position);
                     agent.isStopped = false; // 추적,이동 상태
+
+                    animator.SetBool(hashIsTrace, true);
                     break;
 
                 case State.ATTACK:
