@@ -149,3 +149,18 @@ public class PlayerController : MonoBehaviour
 
 
 */
+
+/*
+ 유한 상태 머신 (Finite State Machine : FSM)
+
+ 
+
+
+
+
+
+
+
+
+
+*/
