@@ -139,28 +139,5 @@ public class PlayerController : MonoBehaviour
     Quaternion.LookRotation(벡터)
     Quaternion.identity
 
-
-
-
-
-
-
-
-
-
 */
 
-/*
- 유한 상태 머신 (Finite State Machine : FSM)
-
- 
-
-
-
-
-
-
-
-
-
-*/
