@@ -72,6 +72,7 @@ public class MonsterController : MonoBehaviour
                 case State.IDLE:
                     // 아이들링일 경우 로직처리
                     agent.isStopped = true;
+                    animator.SetBool(hashIsTrace, false);
                     break;
 
                 case State.TRACE:
