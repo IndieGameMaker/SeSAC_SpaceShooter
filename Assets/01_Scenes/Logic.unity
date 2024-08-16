@@ -2644,6 +2644,7 @@ MonoBehaviour:
   state: 0
   traceDist: 10
   attackDist: 2
+  isDie: 0
 --- !u!4 &2033464553 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8070516315891985185, guid: 691db75b434fc4ffcbc385b0b0bf8489, type: 3}

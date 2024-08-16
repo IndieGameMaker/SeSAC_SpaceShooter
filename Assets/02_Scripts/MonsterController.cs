@@ -53,4 +53,27 @@ public class MonsterController : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
         }
     }
+
+    IEnumerator MonsterAction()
+    {
+        while (!isDie)
+        {
+            switch (state)
+            {
+                case State.IDLE:
+                    // 아이들링일 경우 로직처리
+                    break;
+                case State.TRACE:
+                    // 추적 상태일 때 로직처리
+                    break;
+                case State.ATTACK:
+                    break;
+                case State.DIE:
+                    break;
+            }
+
+            yield return new WaitForSeconds(0.3f);
+        }
+    }
+
 }
