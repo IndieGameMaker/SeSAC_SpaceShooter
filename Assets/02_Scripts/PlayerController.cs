@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private AudioClip fireSfx;
 
+    public MeshRenderer muzzleFlash;
+
     // Animator 컴포넌트를 저장할 변수 선언
     //[NonSerialized]
     [HideInInspector]
@@ -34,6 +36,9 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
+        // MuzzleFlash의 MeshRenderer 컴포넌트 추출
+        muzzleFlash = firePos.GetComponentInChildren<MeshRenderer>();
+        muzzleFlash.enabled = false;
     }
 
     // 매 프레임 마다 호출, 60 FPS, 불규칙한 주기, 랜더링 주기와 동일
