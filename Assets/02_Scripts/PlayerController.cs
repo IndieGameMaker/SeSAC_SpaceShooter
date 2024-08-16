@@ -71,10 +71,11 @@ public class PlayerController : MonoBehaviour
     {
         // MuzzleFlash 활성화
         muzzleFlash.enabled = true;
+
         // Texture Offset 변경 (0,0)  (0.5, 0) (0.5, 0.5) (0, 0.5)
         // Random.Range(0,2) = (0, 1) * 0.5
-        Vector2 offset = new Vector2(Random)
-
+        Vector2 offset = new Vector2(Random.Range(0, 2), Random.Range(0, 2)) * 0.5f;
+        muzzleFlash.material.mainTextureOffset = offset;
 
         // Waitting ...
         yield return new WaitForSeconds(0.2f);
