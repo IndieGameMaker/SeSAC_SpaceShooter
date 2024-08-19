@@ -33,6 +33,16 @@ public class MonsterController : MonoBehaviour
 
     private float hp = 100.0f;
 
+    void OnEnable()
+    {
+        PlayerController.OnPlayerDie += YouWin;
+    }
+
+    void OnDisable()
+    {
+        PlayerController.OnPlayerDie -= YouWin;
+    }
+
     void Start()
     {
         //GameObject playerObj = GameObject.Find("Player");
