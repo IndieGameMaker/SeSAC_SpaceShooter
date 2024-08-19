@@ -128,6 +128,6 @@ public class MonsterController : MonoBehaviour
 
     public void YouWin()
     {
-        Debug.Log("Monster Win !!!");
+        animator.SetTrigger(hashPlayerDie);
     }
 }
