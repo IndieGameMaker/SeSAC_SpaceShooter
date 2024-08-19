@@ -20,10 +20,12 @@ public class MonsterController : MonoBehaviour
     private Transform monsterTr;
     private NavMeshAgent agent;
     private Animator animator;
+
     private readonly int hashIsTrace = Animator.StringToHash("IsTrace");
     private readonly int hashIsAttack = Animator.StringToHash("IsAttack");
     private readonly int hashHit = Animator.StringToHash("Hit");
     private readonly int hashDie = Animator.StringToHash("Die");
+    private readonly int hashPlayerDie = Animator.StringToHash("PlayerDie");
 
     public bool isDie = false;
 
