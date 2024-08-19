@@ -97,4 +97,12 @@ public class MonsterController : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter(Collision coll)
+    {
+        if (coll.gameObject.CompareTag("BULLET"))
+        {
+            Destroy(coll.gameObject);
+        }
+    }
+
 }
