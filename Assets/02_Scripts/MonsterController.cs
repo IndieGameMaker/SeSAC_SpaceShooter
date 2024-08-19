@@ -126,6 +126,6 @@ public class MonsterController : MonoBehaviour
 
     void OnTriggerEnter(Collider coll)
     {
-        Debug.Log(coll.gameObject.name);
+        Debug.Log("Monster" + coll.gameObject.name);
     }
 }
