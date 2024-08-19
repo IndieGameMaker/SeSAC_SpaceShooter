@@ -23,8 +23,11 @@ public class MonsterController : MonoBehaviour
     private readonly int hashIsTrace = Animator.StringToHash("IsTrace");
     private readonly int hashIsAttack = Animator.StringToHash("IsAttack");
     private readonly int hashHit = Animator.StringToHash("Hit");
+    private readonly int hashDie = Animator.StringToHash("Die");
 
     public bool isDie = false;
+
+    private float hp = 100.0f;
 
     void Start()
     {
@@ -91,6 +94,8 @@ public class MonsterController : MonoBehaviour
                     break;
 
                 case State.DIE:
+                    isDie = true;
+                    agent.isStopped = true;
                     break;
             }
 
@@ -104,6 +109,11 @@ public class MonsterController : MonoBehaviour
         {
             Destroy(coll.gameObject);
             animator.SetTrigger(hashHit);
+            hp -= 20.0f;
+            if (hp <= 0.0f)
+            {
+                state = State.DIE;
+            }
         }
     }
 
