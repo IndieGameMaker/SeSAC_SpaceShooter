@@ -135,6 +135,10 @@ public class PlayerController : MonoBehaviour
             {
                 // 이벤트를 발생(Raise)
                 OnPlayerDie();
+                // 몬스터 생성 중지
+                GameManager.Instance.IsGameOver = true;
+
+                // GameObject.Find("GameManager").GetComponent<GameManager>().IsGameOver = true;
 
                 // PlayerDie();
             }
