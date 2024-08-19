@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     // User Define Event 사용자 정의 이벤트
     // Delegate 델리게이트 - 대리자
     public delegate void PlayerDieHandler();
+
     // 이벤트 선언
     public static event PlayerDieHandler OnPlayerDie;
 
