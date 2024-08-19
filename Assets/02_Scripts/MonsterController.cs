@@ -124,8 +124,8 @@ public class MonsterController : MonoBehaviour
     }
 
 
-    void OnTriggerEnter(Collider coll)
+    public void YouWin()
     {
-        Debug.Log("Monster" + coll.gameObject.name);
+        Debug.Log("Monster Win !!!");
     }
 }
