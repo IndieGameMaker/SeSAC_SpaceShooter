@@ -23,12 +23,12 @@ public class GameManager : MonoBehaviour
         set
         {
             isGameOver = value;
-            if (isGameOver)
-            {
-                Debug.Log("게임 종료");
-                // 엔딩 타이틀 UI 표현
-                CancelInvoke(nameof(CreateMonster));
-            }
+            // if (isGameOver)
+            // {
+            //     Debug.Log("게임 종료");
+            //     // 엔딩 타이틀 UI 표현
+            //     CancelInvoke(nameof(CreateMonster));
+            // }
         }
     }
 
@@ -57,12 +57,15 @@ public class GameManager : MonoBehaviour
 
     IEnumerator CreateMonster()
     {
+        yield return new WaitForSeconds(2.0f);
+
         while (!isGameOver)
         {
             // 난수 발생
             int index = UnityEngine.Random.Range(1, points.Count);
-
             Instantiate(monsterPrefab, points[index].position, Quaternion.identity);
+
+            yield return new WaitForSeconds(3.0f);
         }
     }
 
