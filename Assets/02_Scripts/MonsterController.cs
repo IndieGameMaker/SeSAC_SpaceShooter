@@ -142,5 +142,7 @@ public class MonsterController : MonoBehaviour
     {
         animator.SetFloat(hashDanceSpeed, Random.Range(0.8f, 1.5f));
         animator.SetTrigger(hashPlayerDie);
+        StopAllCoroutines();
+        agent.isStopped = true;
     }
 }
