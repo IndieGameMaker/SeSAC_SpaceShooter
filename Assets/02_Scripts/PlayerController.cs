@@ -35,6 +35,9 @@ public class PlayerController : MonoBehaviour
     private readonly int hashForward = Animator.StringToHash("forward");
     private readonly int hashStrafe = Animator.StringToHash("strafe");
 
+    private float initHp = 100.0f;
+    private float currHp = 100.0f;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -120,8 +123,24 @@ public class PlayerController : MonoBehaviour
     {
         if (coll.CompareTag("PUNCH"))
         {
-            Debug.Log(coll.gameObject.name);
+            currHp -= 10.0f;
+            if (currHp <= 0.0f)
+            {
+                PlayerDie();
+            }
         }
+    }
+
+    private void PlayerDie()
+    {
+        // MONSTER 태그를 달고 있는 모든 몬스터를 추출
+        GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
+
+        foreach (var monster in monsters)
+        {
+            monster.SendMessage("YouWin", SendMessageOptions.DontRequireReceiver);
+        }
+
     }
 }
 
