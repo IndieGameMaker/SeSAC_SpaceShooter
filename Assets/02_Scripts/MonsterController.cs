@@ -22,6 +22,7 @@ public class MonsterController : MonoBehaviour
     private Animator animator;
     private readonly int hashIsTrace = Animator.StringToHash("IsTrace");
     private readonly int hashIsAttack = Animator.StringToHash("IsAttack");
+    private readonly int hashHit = Animator.StringToHash("Hit");
 
     public bool isDie = false;
 
