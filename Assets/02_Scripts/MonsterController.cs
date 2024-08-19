@@ -129,6 +129,7 @@ public class MonsterController : MonoBehaviour
 
     public void YouWin()
     {
+        animator.SetFloat(hashDanceSpeed, Random.Range(0.8f, 1.5f));
         animator.SetTrigger(hashPlayerDie);
     }
 }
