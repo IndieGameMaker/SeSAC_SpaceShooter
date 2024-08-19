@@ -123,4 +123,9 @@ public class MonsterController : MonoBehaviour
         }
     }
 
+
+    void OnTriggerEnter(Collider coll)
+    {
+        Debug.Log(coll.gameObject.name);
+    }
 }
