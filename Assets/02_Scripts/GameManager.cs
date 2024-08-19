@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
         spawnPointGroup.GetComponentsInChildren<Transform>(points);
 
         // InvokeRepeating(nameof(CreateMonster), 2.0f, 3.0f);
+        StartCoroutine(CreateMonster());
     }
 
     IEnumerator CreateMonster()
