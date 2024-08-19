@@ -1,16 +1,14 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public List<Transform> points = new List<Transform>();
+
     void Start()
     {
-        
+        var spawnPointGroup = GameObject.Find("SpawnPointGroup");
+        spawnPointGroup.GetComponentsInChildren<Transform>(points);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
