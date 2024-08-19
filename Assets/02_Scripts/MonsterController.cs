@@ -103,6 +103,7 @@ public class MonsterController : MonoBehaviour
         if (coll.gameObject.CompareTag("BULLET"))
         {
             Destroy(coll.gameObject);
+            animator.SetTrigger(hashHit);
         }
     }
 
