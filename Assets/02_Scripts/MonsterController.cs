@@ -100,6 +100,7 @@ public class MonsterController : MonoBehaviour
                     isDie = true;
                     agent.isStopped = true;
                     animator.SetTrigger(hashDie);
+                    GetComponent<CapsuleCollider>().enabled = false;
                     // StopCoroutine(CheckMonsterState());
                     break;
             }
