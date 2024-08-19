@@ -115,6 +115,14 @@ public class PlayerController : MonoBehaviour
         h = Input.GetAxis("Horizontal");
         r = Input.GetAxis("Mouse X");
     }
+
+    void OnTriggerEnter(Collider coll)
+    {
+        if (coll.CompareTag("PUNCH"))
+        {
+            Debug.Log(coll.gameObject.name);
+        }
+    }
 }
 
 /*
