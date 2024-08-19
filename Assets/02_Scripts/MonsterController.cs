@@ -48,6 +48,9 @@ public class MonsterController : MonoBehaviour
     {
         while (isDie == false)
         {
+            // 몬스터의 상태가 DIE 일 경우 해당 코루틴을 정지
+            if (state == State.DIE) yield break;
+
             //상태값을 측정
             float distance = Vector3.Distance(monsterTr.position, playerTr.position);
 
@@ -97,6 +100,7 @@ public class MonsterController : MonoBehaviour
                     isDie = true;
                     agent.isStopped = true;
                     animator.SetTrigger(hashDie);
+                    // StopCoroutine(CheckMonsterState());
                     break;
             }
 
