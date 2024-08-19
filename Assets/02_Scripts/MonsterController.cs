@@ -96,6 +96,7 @@ public class MonsterController : MonoBehaviour
                 case State.DIE:
                     isDie = true;
                     agent.isStopped = true;
+                    animator.SetTrigger(hashDie);
                     break;
             }
 
