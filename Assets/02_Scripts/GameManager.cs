@@ -69,5 +69,13 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(3.0f);
         }
     }
+    // Pseudo 코드
+    // void 추적()
+    // {
+    //     //1. 주인공 케릭터를 찾는다.
 
+    //     //2. 이동 명령을 내린다.
+    //     //3. 근접 하면 공격 애니메이션 실행
+    //     //4. 사운드 재생
+    // }
 }
