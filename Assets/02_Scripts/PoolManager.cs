@@ -32,8 +32,8 @@ public class PoolManager : MonoBehaviour
             actionOnGet: OnTakeItem,
             actionOnRelease: OnReturnItem,
             actionOnDestroy: OnDestroyItem,
-            defaultCapacity: 20,
-            maxSize: 30
+            defaultCapacity: 5,
+            maxSize: 10
         );
     }
 

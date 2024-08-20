@@ -80,6 +80,8 @@ public class PlayerController : MonoBehaviour
 
     private void Fire()
     {
+        Debug.DrawRay(firePos.position, firePos.forward * 10.0f, Color.green);
+
         if (isFire && Time.time >= nextFireTime)
         {
             // 총알 프리팹을 이용해서 런타임에서 동적을 생성
