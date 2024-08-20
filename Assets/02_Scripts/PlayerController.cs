@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
     private void Fire()
     {
-        if (isFire)
+        if (isFire && Time.time >= nextFireTime)
         {
             // 총알 프리팹을 이용해서 런타임에서 동적을 생성
             Instantiate(bulletPrefab, firePos.position, firePos.rotation);
@@ -88,6 +88,9 @@ public class PlayerController : MonoBehaviour
             audio.PlayOneShot(fireSfx, 0.8f);
             // 총구 화염 효과
             StartCoroutine(ShowMuzzleFlash());
+
+            // 다음 총알 발사 시각 = 현재시간 + 연사속도
+            nextFireTime = Time.time + fireRate;
         }
     }
 
