@@ -135,13 +135,13 @@ public class MonsterController : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    void OnCollisionEnter(Collision coll)
-    {
-        if (coll.gameObject.CompareTag("BULLET"))
-        {
-            PoolManager.Instance.bulletPool.Release(coll.gameObject.GetComponent<Bullet>());
-        }
-    }
+    // void OnCollisionEnter(Collision coll)
+    // {
+    //     if (coll.gameObject.CompareTag("BULLET"))
+    //     {
+    //         PoolManager.Instance.bulletPool.Release(coll.gameObject.GetComponent<Bullet>());
+    //     }
+    // }
 
     public void OnDamaged()
     {
