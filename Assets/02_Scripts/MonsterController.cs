@@ -36,6 +36,9 @@ public class MonsterController : MonoBehaviour
     void OnEnable()
     {
         PlayerController.OnPlayerDie += YouWin;
+
+        StartCoroutine(CheckMonsterState());
+        StartCoroutine(MonsterAction());
     }
 
     void OnDisable()
@@ -43,7 +46,7 @@ public class MonsterController : MonoBehaviour
         PlayerController.OnPlayerDie -= YouWin;
     }
 
-    void Start()
+    void Awake()
     {
         //GameObject playerObj = GameObject.Find("Player");
 
@@ -54,8 +57,7 @@ public class MonsterController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
 
-        StartCoroutine(CheckMonsterState());
-        StartCoroutine(MonsterAction());
+
     }
 
     IEnumerator CheckMonsterState()

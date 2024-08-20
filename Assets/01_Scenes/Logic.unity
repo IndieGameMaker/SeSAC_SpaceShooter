@@ -1629,6 +1629,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: []
   monsterPrefab: {fileID: 8263859080161828413, guid: 7a19b51bd71924a2e9dde7fcfc5aa964, type: 3}
+  monsterPool: []
+  maxPool: 10
 --- !u!1001 &699804485
 PrefabInstance:
   m_ObjectHideFlags: 0
