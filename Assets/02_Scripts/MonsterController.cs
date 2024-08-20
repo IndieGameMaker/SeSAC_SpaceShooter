@@ -115,12 +115,20 @@ public class MonsterController : MonoBehaviour
                     agent.isStopped = true;
                     animator.SetTrigger(hashDie);
                     GetComponent<CapsuleCollider>().enabled = false;
-                    // StopCoroutine(CheckMonsterState());
+                    // 오브젝트 풀에 환원
+                    Invoke(nameof(ReturnPool), 3.0f);
                     break;
             }
 
             yield return new WaitForSeconds(0.3f);
         }
+    }
+
+    void ReturnPool()
+    {
+        hp = 100.0f;
+        isDie = false;
+        GetComponent<CapsuleCollider>().enabled = true;
     }
 
     void OnCollisionEnter(Collision coll)
