@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -57,8 +58,21 @@ public class GameManager : MonoBehaviour
         var spawnPointGroup = GameObject.Find("SpawnPointGroup");
         spawnPointGroup.GetComponentsInChildren<Transform>(points);
 
-        // InvokeRepeating(nameof(CreateMonster), 2.0f, 3.0f);
-        StartCoroutine(CreateMonster());
+        CreateMonsterPool();
+
+        // StartCoroutine(CreateMonster());
+    }
+
+    private void CreateMonsterPool()
+    {
+        for (int i = 0; i < maxPool; i++)
+        {
+            GameObject monster = Instantiate(monsterPrefab);
+            monster.name = $"Monster_{i:00}";
+            monster.SetActive(false);
+            // 오브젝트 풀에 추가
+            monsterPool.Add(monster);
+        }
     }
 
     IEnumerator CreateMonster()
