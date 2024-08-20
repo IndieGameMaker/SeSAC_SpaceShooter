@@ -130,6 +130,7 @@ public class MonsterController : MonoBehaviour
     {
         hp = 100.0f;
         isDie = false;
+        state = State.IDLE;
         GetComponent<CapsuleCollider>().enabled = true;
         this.gameObject.SetActive(false);
     }
