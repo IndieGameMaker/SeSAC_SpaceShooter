@@ -88,9 +88,14 @@ public class PlayerController : MonoBehaviour
             // Instantiate(bulletPrefab, firePos.position, firePos.rotation);
 
             // PoolManager 총알을 가져오는 로직
-            Bullet bullet = PoolManager.Instance.bulletPool.Get();
-            bullet.transform.SetPositionAndRotation(firePos.position, firePos.rotation);
-            bullet.Shoot();
+            // Bullet bullet = PoolManager.Instance.bulletPool.Get();
+            // bullet.transform.SetPositionAndRotation(firePos.position, firePos.rotation);
+            // bullet.Shoot();
+
+            if (Physics.Raycast(firePos.position, firePos.forward, out RaycastHit hit, 10.0f))
+            {
+                Debug.Log($"Hit = {hit.collider.name}");
+            }
 
             // 총소리 발생
             audio.PlayOneShot(fireSfx, 0.8f);
