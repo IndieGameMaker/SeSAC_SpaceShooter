@@ -33,7 +33,8 @@ public class PoolManager : MonoBehaviour
             actionOnRelease: OnReturnItem,
             actionOnDestroy: OnDestroyItem,
             defaultCapacity: 5,
-            maxSize: 10
+            maxSize: 10,
+            collectionCheck: false
         );
     }
 

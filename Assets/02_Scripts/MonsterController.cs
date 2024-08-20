@@ -139,15 +139,17 @@ public class MonsterController : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("BULLET"))
         {
-            //Destroy(coll.gameObject);
-            //PoolManager.Instance.bulletPool.Release(coll.gameObject.GetComponent<Bullet>());
+            PoolManager.Instance.bulletPool.Release(coll.gameObject.GetComponent<Bullet>());
+        }
+    }
 
-            animator.SetTrigger(hashHit);
-            hp -= 20.0f;
-            if (hp <= 0.0f)
-            {
-                state = State.DIE;
-            }
+    public void OnDamaged()
+    {
+        animator.SetTrigger(hashHit);
+        hp -= 20.0f;
+        if (hp <= 0.0f)
+        {
+            state = State.DIE;
         }
     }
 
