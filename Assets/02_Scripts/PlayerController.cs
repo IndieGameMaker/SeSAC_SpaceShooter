@@ -48,6 +48,10 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        // Cursor Lock
+        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.SetCursor()
+
         animator = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
         cc = GetComponent<CharacterController>();
