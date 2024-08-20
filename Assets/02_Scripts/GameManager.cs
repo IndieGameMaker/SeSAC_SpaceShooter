@@ -13,6 +13,11 @@ public class GameManager : MonoBehaviour
 
     private bool isGameOver = false;
 
+    // 오브젝트 풀 정의(선언)
+    public List<GameObject> monsterPool = new List<GameObject>();
+    // 오브젝트 풀 갯수
+    public int maxPool = 10;
+
     // 프로퍼티 선언
     public bool IsGameOver
     {
