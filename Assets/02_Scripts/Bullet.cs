@@ -7,6 +7,11 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+    }
+
+    public void Shoot()
+    {
+        rb.rotation = Quaternion.LookRotation(transform.forward);
         rb.AddRelativeForce(Vector3.forward * 1200.0f);
     }
 }

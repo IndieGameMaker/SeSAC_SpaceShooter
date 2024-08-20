@@ -83,7 +83,12 @@ public class PlayerController : MonoBehaviour
         if (isFire && Time.time >= nextFireTime)
         {
             // 총알 프리팹을 이용해서 런타임에서 동적을 생성
-            Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+            // Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+
+            // PoolManager 총알을 가져오는 로직
+            Bullet bullet = PoolManager.Instance.bulletPool.Get();
+            bullet.transform.SetPositionAndRotation(firePos.position, firePos.rotation);
+
             // 총소리 발생
             audio.PlayOneShot(fireSfx, 0.8f);
             // 총구 화염 효과
