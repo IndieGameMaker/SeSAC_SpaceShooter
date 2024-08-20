@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Animator animator;
     private AudioSource audio;
+    private CharacterController cc;
 
     // Animator Hash 추출
     private readonly int hashForward = Animator.StringToHash("forward");
@@ -49,6 +50,8 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
+        cc = GetComponent<CharacterController>();
+
         // MuzzleFlash의 MeshRenderer 컴포넌트 추출
         muzzleFlash = firePos.GetComponentInChildren<MeshRenderer>();
         muzzleFlash.enabled = false;
@@ -111,8 +114,9 @@ public class PlayerController : MonoBehaviour
     {
         // Vector 덧셈 연산
         // 이동 처리 로직
-        Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
-        transform.Translate(moveDir.normalized * Time.deltaTime * moveSpeed);
+        Vector3 moveDir = (transform.forward * v) + (transform.right * h);
+        cc.Move(moveDir.normalized * Time.deltaTime * moveSpeed);
+        //transform.Translate(moveDir.normalized * Time.deltaTime * moveSpeed);
 
         // 회전 처리 로직
         transform.Rotate(Vector3.up * Time.deltaTime * r * turnSpeed);
