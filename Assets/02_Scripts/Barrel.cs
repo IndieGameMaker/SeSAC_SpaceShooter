@@ -4,11 +4,9 @@ using Random = UnityEngine.Random;
 
 public class Barrel : MonoBehaviour
 {
+    [SerializeField] private BarrelDataSO barrelDataSO;
+
     private int hitCount = 0;
-    public GameObject expEffect;
-
-    [SerializeField] private Texture[] textures;
-
     private new MeshRenderer renderer;
 
     void Start()
@@ -16,9 +14,9 @@ public class Barrel : MonoBehaviour
         // 차일드에 있는 MeshRenderer 컴포넌트를 추출
         renderer = GetComponentInChildren<MeshRenderer>();
         // 텍스처를 선택하기 위한 난수 발생
-        int index = Random.Range(0, textures.Length); //Random.Range(0, 3) => 0, 1, 2
+        int index = Random.Range(0, barrelDataSO.textures.Length); //Random.Range(0, 3) => 0, 1, 2
         // 텍스처 교체
-        renderer.material.mainTexture = textures[index];
+        renderer.material.mainTexture = barrelDataSO.textures[index];
     }
 
     void OnCollisionEnter(Collision coll)
@@ -53,7 +51,7 @@ public class Barrel : MonoBehaviour
         rb.AddExplosionForce(1500.0f, transform.position + pos, 10.0f, 1800.0f);
         Destroy(this.gameObject, 3.0f);
 
-        var obj = Instantiate(expEffect, transform.position, Quaternion.identity);
+        var obj = Instantiate(barrelDataSO.expEffect, transform.position, Quaternion.identity);
         Destroy(obj, 5.0f);
     }
 }
