@@ -46,6 +46,14 @@ public class PlayerController : MonoBehaviour
     // 이벤트 선언
     public static event PlayerDieHandler OnPlayerDie;
 
+    // Lamda Expression 람다식 표현 => goes to
+    private bool isFire => Input.GetMouseButton(0);
+
+    // 연사속도
+    [SerializeField] private float fireRate = 0.1f;
+    // 다음 발사 시간
+    private float nextFireTime = 0.0f;
+
     void Start()
     {
         // Cursor Lock
@@ -72,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
     private void Fire()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (isFire)
         {
             // 총알 프리팹을 이용해서 런타임에서 동적을 생성
             Instantiate(bulletPrefab, firePos.position, firePos.rotation);
