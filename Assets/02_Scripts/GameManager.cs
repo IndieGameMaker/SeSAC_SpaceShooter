@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
 
         CreateMonsterPool();
 
-        // StartCoroutine(CreateMonster());
+        StartCoroutine(CreateMonster());
     }
 
     private void CreateMonsterPool()
@@ -83,7 +83,19 @@ public class GameManager : MonoBehaviour
         {
             // 난수 발생
             int index = UnityEngine.Random.Range(1, points.Count);
-            Instantiate(monsterPrefab, points[index].position, Quaternion.identity);
+
+            // 오브젝트 풀에서 비활성화 된 몬스처를 추출
+            foreach (var monster in monsterPool)
+            {
+                if (monster.activeSelf == false)
+                {
+                    monster.transform.position = points[index].position;
+                    monster.SetActive(true);
+                    break;
+                }
+            }
+
+            //Instantiate(monsterPrefab, points[index].position, Quaternion.identity);
 
             yield return new WaitForSeconds(3.0f);
         }
