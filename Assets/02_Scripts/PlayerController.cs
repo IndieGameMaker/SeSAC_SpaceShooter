@@ -88,6 +88,7 @@ public class PlayerController : MonoBehaviour
             // PoolManager 총알을 가져오는 로직
             Bullet bullet = PoolManager.Instance.bulletPool.Get();
             bullet.transform.SetPositionAndRotation(firePos.position, firePos.rotation);
+            bullet.Shoot();
 
             // 총소리 발생
             audio.PlayOneShot(fireSfx, 0.8f);
