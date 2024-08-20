@@ -129,6 +129,7 @@ public class MonsterController : MonoBehaviour
         hp = 100.0f;
         isDie = false;
         GetComponent<CapsuleCollider>().enabled = true;
+        this.gameObject.SetActive(false);
     }
 
     void OnCollisionEnter(Collision coll)
