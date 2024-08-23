@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -37,6 +39,10 @@ public class GameManager : MonoBehaviour
             // }
         }
     }
+
+    // 점수 저장 변수 선언
+    public int score = 0;
+    public TMP_Text scoreText;
 
     void Awake()
     {

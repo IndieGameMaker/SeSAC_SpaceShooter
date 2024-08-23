@@ -165,6 +165,9 @@ public class PlayerController : MonoBehaviour
         if (currHp > 0.0f && coll.CompareTag("PUNCH"))
         {
             currHp -= 10.0f;
+
+            hpBar.fillAmount = currHp / initHp;
+
             if (currHp <= 0.0f)
             {
                 // 이벤트를 발생(Raise)
