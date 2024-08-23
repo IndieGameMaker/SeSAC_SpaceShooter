@@ -52,7 +52,11 @@ public class GameManager : MonoBehaviour
         }
         set
         {
-
+            // 점수를 저장
+            score += value;
+            PlayerPrefs.SetInt("SCORE", score);
+            // 점수를 출력
+            scoreText.text = $"SCORE : {score:0000000}";
         }
     }
     public TMP_Text scoreText;

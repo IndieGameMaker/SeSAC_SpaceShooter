@@ -150,6 +150,7 @@ public class MonsterController : MonoBehaviour, IDamagable
         if (hp <= 0.0f)
         {
             state = State.DIE;
+            GameManager.Instance.Score = 50;
         }
     }
 
