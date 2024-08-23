@@ -1226,6 +1226,8 @@ MonoBehaviour:
   monsterPrefab: {fileID: 8263859080161828413, guid: 7a19b51bd71924a2e9dde7fcfc5aa964, type: 3}
   monsterPool: []
   maxPool: 10
+  score: 0
+  scoreText: {fileID: 1915091412}
 --- !u!137 &703479687 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 13700000, guid: f3cd25b3bf53c4adaaf087d862e435e6, type: 3}

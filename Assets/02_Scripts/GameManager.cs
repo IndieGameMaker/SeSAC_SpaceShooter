@@ -41,7 +41,20 @@ public class GameManager : MonoBehaviour
     }
 
     // 점수 저장 변수 선언
-    public int score = 0;
+    private int score = 0;
+
+    // 점수 프로퍼티 선언
+    public int Score
+    {
+        get
+        {
+            return score;
+        }
+        set
+        {
+
+        }
+    }
     public TMP_Text scoreText;
 
     void Awake()
