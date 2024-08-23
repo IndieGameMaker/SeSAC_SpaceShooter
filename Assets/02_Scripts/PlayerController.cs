@@ -5,7 +5,7 @@ using System.Collections;
 using UnityEditor.PackageManager;
 using UnityEngine;
 using Random = UnityEngine.Random;
-
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform firePos;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private AudioClip fireSfx;
+    [SerializeField] private Image hpBar;
 
     public MeshRenderer muzzleFlash;
 
