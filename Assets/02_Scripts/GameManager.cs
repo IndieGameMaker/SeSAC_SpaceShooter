@@ -78,6 +78,10 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        // 점수 로드 및 출력
+        score = PlayerPrefs.GetInt("SCORE", 0);
+        scoreText.text = $"SCORE : {score:0000000}";
+
         var spawnPointGroup = GameObject.Find("SpawnPointGroup");
         spawnPointGroup.GetComponentsInChildren<Transform>(points);
 
