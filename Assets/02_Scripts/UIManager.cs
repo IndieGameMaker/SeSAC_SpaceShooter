@@ -1,16 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void OnStartButtonClick()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        // 씬 로딩 (Logic)
+        SceneManager.LoadScene("Logic");
     }
 }
