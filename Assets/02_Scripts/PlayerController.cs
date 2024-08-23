@@ -92,9 +92,10 @@ public class PlayerController : MonoBehaviour
             bullet.transform.SetPositionAndRotation(firePos.position, firePos.rotation);
             bullet.Shoot();
 
-            if (Physics.Raycast(firePos.position, firePos.forward, out RaycastHit hit, 10.0f, 1 << 8))
+            if (Physics.Raycast(firePos.position, firePos.forward, out RaycastHit hit, 10.0f, 1 << 8 | 1 << 10))
             {
-                hit.collider.GetComponent<MonsterController>().OnDamaged();
+                Debug.Log(hit.collider.name);
+                hit.collider.GetComponent<IDamagable>().OnDamaged();
             }
 
             // 총소리 발생
