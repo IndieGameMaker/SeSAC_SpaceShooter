@@ -137,3 +137,16 @@ public class GameManager : MonoBehaviour
     //     //4. 사운드 재생
     // }
 }
+/*
+    Lightmap , Lightmapping
+
+    베이킹 (Bake, Baking)
+
+    조명의 종류
+    1. 직접 광원 (Direct Light)
+    2. 간접 광원 (Indirect Light)
+
+
+    1. 실시간 조명 (Realtime Light)
+    2. 베이크 조명 (Baked Light)
+*/
